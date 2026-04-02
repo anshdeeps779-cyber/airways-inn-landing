@@ -1,0 +1,1201 @@
+"<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta name=\"description\" content=\"Airways Inn Residency - Your Comfortable Stay in the Heart of Andheri East, Mumbai. Budget-friendly hotel near Mumbai Airport.\">
+    <title>Airways Inn Residency - Budget Hotel in Andheri East, Mumbai</title>
+    
+    <!-- Google Fonts -->
+    <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">
+    
+    <!-- Font Awesome Icons -->
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --navy-dark: #0a1628;
+            --navy-darker: #050b14;
+            --gold: #d4af37;
+            --gold-dark: #b8941f;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-600: #4b5563;
+            --green: #16a34a;
+            --green-dark: #15803d;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--navy-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-success {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .btn-success:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(10, 22, 40, 0.98);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu nav {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .mobile-menu nav a,
+        .mobile-menu .btn {
+            width: 100%;
+            text-align: left;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(10, 22, 40, 0.9), rgba(10, 22, 40, 0.7), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: var(--white);
+            max-width: 700px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .highlight {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--gray-200);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+        }
+
+        .bg-gray {
+            background: var(--gray-50);
+        }
+
+        .bg-navy {
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .bg-navy-darker {
+            background: var(--navy-darker);
+            color: var(--white);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 16rem;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        /* Icon Card */
+        .icon-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .icon-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-circle {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-circle i {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .icon-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-card p {
+            color: var(--gray-600);
+        }
+
+        /* Amenities Section */
+        .amenities-box {
+            background: var(--navy-dark);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .amenities-box h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .amenities-box h3 .highlight {
+            color: var(--gold);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .amenity-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .amenity-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .amenity-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .amenity-item span {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Location Section */
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box h3 i {
+            color: var(--gold);
+        }
+
+        .landmark-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .landmark-item:last-child {
+            border-bottom: none;
+        }
+
+        .landmark-time {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .map-container {
+            height: 24rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .contact-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-box h3 i {
+            color: var(--gold);
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-textarea {
+            min-height: 6rem;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-darker);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray-400);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--white);
+            color: var(--navy-dark);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .toast.show {
+            display: flex;
+        }
+
+        .toast.success {
+            border-left: 4px solid var(--green);
+        }
+
+        .toast i {
+            color: var(--green);
+            font-size: 1.5rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav.desktop-nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id=\"header\">
+        <div class=\"container\">
+            <div class=\"header-content\">
+                <a href=\"#\" class=\"logo font-display\">Airways Inn Residency</a>
+                
+                <nav class=\"desktop-nav\">
+                    <a href=\"#about\">About</a>
+                    <a href=\"#rooms\">Rooms</a>
+                    <a href=\"#location\">Location</a>
+                    <a href=\"#contact\">Contact</a>
+                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-primary\">Book Now</a>
+                </nav>
+
+                <button class=\"menu-toggle\" id=\"menuToggle\">
+                    <i class=\"fas fa-bars\"></i>
+                </button>
+            </div>
+
+            <div class=\"mobile-menu\" id=\"mobileMenu\">
+                <nav>
+                    <a href=\"#about\">About</a>
+                    <a href=\"#rooms\">Rooms</a>
+                    <a href=\"#location\">Location</a>
+                    <a href=\"#contact\">Contact</a>
+                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-primary\">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class=\"hero\">
+        <div class=\"hero-bg\">
+            <img src=\"https://images.pexels.com/photos/36688004/pexels-photo-36688004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\" alt=\"Airways Inn Residency\">
+            <div class=\"hero-overlay\"></div>
+        </div>
+
+        <div class=\"container\">
+            <div class=\"hero-content\">
+                <div class=\"stars\">
+                    <i class=\"fas fa-star star\"></i>
+                    <i class=\"fas fa-star star\"></i>
+                    <span style=\"margin-left: 0.5rem; color: var(--gold); font-weight: 600;\">2 Star Hotel</span>
+                </div>
+                
+                <h1 class=\"font-display\">
+                    Airways Inn <span class=\"highlight\">Residency</span>
+                </h1>
+                
+                <p>Your Comfortable Stay in the Heart of Andheri East</p>
+
+                <div class=\"hero-buttons\">
+                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\">
+                        Book Now via WhatsApp
+                    </a>
+                    <a href=\"tel:+912228591000\" class=\"btn btn-primary\">
+                        <i class=\"fas fa-phone\"></i> Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id=\"about\" class=\"bg-gray\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2 class=\"font-display\">Welcome to Airways Inn Residency</h2>
+                <p style=\"max-width: 800px; margin: 0 auto;\">
+                    Experience budget-friendly comfort in the heart of Andheri East. Strategically located near Marol Naka, 
+                    we offer easy access to BKC, SEEPZ, Andheri railway station, and Mumbai airport. Perfect for business 
+                    travelers and airport transit guests seeking quality accommodation at affordable rates.
+                </p>
+            </div>
+
+            <div class=\"cards-grid\">
+                <div class=\"icon-card\">
+                    <div class=\"icon-circle\">
+                        <i class=\"fas fa-plane\"></i>
+                    </div>
+                    <h3 class=\"font-display\">Airport Nearby</h3>
+                    <p>Just 5 minutes from Mumbai International Airport</p>
+                </div>
+
+                <div class=\"icon-card\">
+                    <div class=\"icon-circle\">
+                        <i class=\"fas fa-building\"></i>
+                    </div>
+                    <h3 class=\"font-display\">Business District Access</h3>
+                    <p>15 minutes to BKC, 5 minutes to SEEPZ</p>
+                </div>
+
+                <div class=\"icon-card\">
+                    <div class=\"icon-circle\">
+                        <i class=\"fas fa-sparkles\"></i>
+                    </div>
+                    <h3 class=\"font-display\">Comfortable Rooms</h3>
+                    <p>Modern amenities for a pleasant stay</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Amenities Section -->
+    <section id=\"rooms\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2 class=\"font-display\">Our Rooms</h2>
+                <p>Choose the perfect room for your stay</p>
+            </div>
+
+            <div class=\"cards-grid\">
+                <div class=\"card\">
+                    <div class=\"card-image\">
+                        <img src=\"https://images.unsplash.com/photo-1618773928121-c32242e63f39\" alt=\"Standard Room\">
+                    </div>
+                    <div class=\"card-content\">
+                        <h3 class=\"card-title font-display\">Standard Room</h3>
+                        <p class=\"card-text\">Comfortable accommodation with all essential amenities for a pleasant stay.</p>
+                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Standard%20Room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                            Check Availability
+                        </a>
+                    </div>
+                </div>
+
+                <div class=\"card\">
+                    <div class=\"card-image\">
+                        <img src=\"https://images.unsplash.com/photo-1611892440504-42a792e24d32\" alt=\"Deluxe Room\">
+                    </div>
+                    <div class=\"card-content\">
+                        <h3 class=\"card-title font-display\">Deluxe Room</h3>
+                        <p class=\"card-text\">Enhanced comfort with premium furnishings and additional space.</p>
+                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Deluxe%20Room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                            Check Availability
+                        </a>
+                    </div>
+                </div>
+
+                <div class=\"card\">
+                    <div class=\"card-image\">
+                        <img src=\"https://images.unsplash.com/photo-1631049552057-403cdb8f0658\" alt=\"Suite\">
+                    </div>
+                    <div class=\"card-content\">
+                        <h3 class=\"card-title font-display\">Suite</h3>
+                        <p class=\"card-text\">Spacious suite with separate seating area for ultimate comfort.</p>
+                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Suite%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                            Check Availability
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class=\"amenities-box\">
+                <h3 class=\"font-display\">Our <span class=\"highlight\">Amenities</span></h3>
+                <div class=\"amenities-grid\">
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-wifi\"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-wind\"></i>
+                        <span>AC Rooms</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-clock\"></i>
+                        <span>24/7 Reception</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-droplet\"></i>
+                        <span>Hot Water</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-tv\"></i>
+                        <span>TV</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-sparkles\"></i>
+                        <span>Housekeeping</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-battery-full\"></i>
+                        <span>Power Backup</span>
+                    </div>
+                    <div class=\"amenity-item\">
+                        <i class=\"fas fa-shield\"></i>
+                        <span>CCTV Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id=\"location\" class=\"bg-gray\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2 class=\"font-display\">Our Location</h2>
+                <p>Conveniently located in the heart of Andheri East</p>
+            </div>
+
+            <div class=\"location-grid\">
+                <div class=\"location-info\">
+                    <div class=\"info-box\">
+                        <h3 class=\"font-display\">
+                            <i class=\"fas fa-map-marker-alt\"></i>
+                            Address
+                        </h3>
+                        <p>
+                            Airways Inn Residency<br>
+                            Marol Naka, Andheri-Kurla Road<br>
+                            Andheri East, Mumbai, Maharashtra
+                        </p>
+                    </div>
+
+                    <div class=\"info-box\">
+                        <h3 class=\"font-display\">Nearby Landmarks</h3>
+                        <div class=\"landmark-item\">
+                            <span>Mumbai Airport</span>
+                            <span class=\"landmark-time\">5 min</span>
+                        </div>
+                        <div class=\"landmark-item\">
+                            <span>BKC Business District</span>
+                            <span class=\"landmark-time\">15 min</span>
+                        </div>
+                        <div class=\"landmark-item\">
+                            <span>SEEPZ</span>
+                            <span class=\"landmark-time\">5 min</span>
+                        </div>
+                        <div class=\"landmark-item\">
+                            <span>Andheri Station</span>
+                            <span class=\"landmark-time\">10 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=\"map-container\">
+                    <iframe
+                        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2044084965614!2d72.86866931490194!3d19.11076558705733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c83c0e5bb89b%3A0x5c5c5c5c5c5c5c5c!2sMarol%20Naka%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin\"
+                        allowfullscreen=\"\"
+                        loading=\"lazy\"
+                        referrerpolicy=\"no-referrer-when-downgrade\"
+                        title=\"Airways Inn Residency Location\">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id=\"contact\" class=\"bg-navy\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2 class=\"font-display\">Book Your <span style=\"color: var(--gold);\">Stay</span></h2>
+                <p style=\"color: var(--gray-400);\">We're here 24/7 to assist you</p>
+            </div>
+
+            <div class=\"contact-grid\">
+                <div>
+                    <div class=\"contact-box\">
+                        <h3 class=\"font-display\">
+                            <i class=\"fas fa-phone\"></i>
+                            Contact Information
+                        </h3>
+                        <div class=\"contact-item\">
+                            <p>Phone</p>
+                            <a href=\"tel:+912228591000\">+91-22-28591000</a>
+                        </div>
+                        <div class=\"contact-item\">
+                            <p>Business Hours</p>
+                            <p style=\"font-size: 1.125rem; color: var(--white);\">24/7 Front Desk</p>
+                        </div>
+                    </div>
+
+                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%; margin-top: 1.5rem; padding: 1.5rem; font-size: 1.125rem;\">
+                        Book via WhatsApp
+                    </a>
+                </div>
+
+                <div class=\"contact-box\">
+                    <h3 class=\"font-display\">Inquiry Form</h3>
+                    <form id=\"inquiryForm\">
+                        <div class=\"form-group\">
+                            <label class=\"form-label\">Name</label>
+                            <input type=\"text\" name=\"name\" class=\"form-input\" placeholder=\"Your name\" required>
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label class=\"form-label\">Phone</label>
+                            <input type=\"tel\" name=\"phone\" class=\"form-input\" placeholder=\"Your phone number\" required>
+                        </div>
+
+                        <div class=\"form-row\">
+                            <div class=\"form-group\">
+                                <label class=\"form-label\">Check-in</label>
+                                <input type=\"date\" name=\"checkin\" class=\"form-input\" required>
+                            </div>
+                            <div class=\"form-group\">
+                                <label class=\"form-label\">Check-out</label>
+                                <input type=\"date\" name=\"checkout\" class=\"form-input\" required>
+                            </div>
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label class=\"form-label\">Message</label>
+                            <textarea name=\"message\" class=\"form-textarea\" placeholder=\"Any special requests?\"></textarea>
+                        </div>
+
+                        <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%; padding: 1.5rem;\">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=\"bg-navy-darker\">
+        <div class=\"container\">
+            <div class=\"footer-grid\">
+                <div class=\"footer-section\">
+                    <h3 class=\"font-display\">Airways Inn Residency</h3>
+                    <p>
+                        Marol Naka, Andheri-Kurla Road<br>
+                        Andheri East, Mumbai<br>
+                        Phone: +91-22-28591000
+                    </p>
+                </div>
+
+                <div class=\"footer-section\">
+                    <h3 class=\"font-display\" style=\"font-size: 1.125rem;\">Quick Links</h3>
+                    <a href=\"#about\">About Us</a>
+                    <a href=\"#rooms\">Rooms & Amenities</a>
+                    <a href=\"#location\">Location</a>
+                    <a href=\"#contact\">Contact</a>
+                </div>
+
+                <div class=\"footer-section\">
+                    <h3 class=\"font-display\" style=\"font-size: 1.125rem;\">Connect With Us</h3>
+                    <div class=\"footer-buttons\">
+                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\">
+                            <i class=\"fab fa-whatsapp\"></i> WhatsApp
+                        </a>
+                        <a href=\"tel:+912228591000\" class=\"btn btn-primary\">
+                            <i class=\"fas fa-phone\"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=\"footer-bottom\">
+                <p>&copy; 2025 Airways Inn Residency. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class=\"toast success\" id=\"toast\">
+        <i class=\"fas fa-check-circle\"></i>
+        <span id=\"toastMessage\">Thank you! We'll call you back shortly.</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        const inquiryForm = document.getElementById('inquiryForm');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        inquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show toast notification
+            toastMessage.textContent = \"Thank you! We'll call you back shortly.\";
+            toast.classList.add('show');
+            
+            // Reset form
+            inquiryForm.reset();
+            
+            // Hide toast after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        });
+
+        // Set minimum date for check-in and check-out
+        const today = new Date().toISOString().split('T')[0];
+        const checkinInput = document.querySelector('input[name=\"checkin\"]');
+        const checkoutInput = document.querySelector('input[name=\"checkout\"]');
+        
+        if (checkinInput) {
+            checkinInput.setAttribute('min', today);
+            checkinInput.addEventListener('change', (e) => {
+                checkoutInput.setAttribute('min', e.target.value);
+            });
+        }
+    </script>
+</body>
+</html>"
