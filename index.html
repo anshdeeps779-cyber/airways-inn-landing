@@ -1,16 +1,10 @@
-"<!DOCTYPE html>
-<html lang=\"en\">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <meta name=\"description\" content=\"Airways Inn Residency - Your Comfortable Stay in the Heart of Andheri East, Mumbai. Budget-friendly hotel near Mumbai Airport.\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Airways Inn Residency - Your Comfortable Stay in the Heart of Andheri East, Mumbai. Budget-friendly hotel near Mumbai Airport.">
     <title>Airways Inn Residency - Budget Hotel in Andheri East, Mumbai</title>
-    
-    <!-- Google Fonts -->
-    <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">
-    
-    <!-- Font Awesome Icons -->
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">
     
     <style>
         /* CSS Variables */
@@ -40,14 +34,15 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             color: var(--navy-dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         .font-display {
-            font-family: 'Playfair Display', serif;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
         }
 
         /* Container */
@@ -86,6 +81,7 @@
             font-weight: 700;
             color: var(--gold);
             text-decoration: none;
+            font-family: Georgia, serif;
         }
 
         nav {
@@ -98,6 +94,7 @@
             color: var(--white);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
 
         nav a:hover {
@@ -114,6 +111,7 @@
             text-decoration: none;
             display: inline-block;
             text-align: center;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -143,8 +141,9 @@
             background: none;
             border: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 0.5rem;
         }
 
         .mobile-menu {
@@ -234,6 +233,7 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
+            font-family: Georgia, serif;
         }
 
         .hero h1 .highlight {
@@ -272,6 +272,7 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            font-family: Georgia, serif;
         }
 
         .section-title p {
@@ -337,6 +338,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
         }
 
         .card-text {
@@ -367,17 +369,14 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-        }
-
-        .icon-circle i {
             font-size: 2rem;
-            color: var(--gold);
         }
 
         .icon-card h3 {
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
         }
 
         .icon-card p {
@@ -398,6 +397,7 @@
             text-align: center;
             margin-bottom: 2rem;
             color: var(--white);
+            font-family: Georgia, serif;
         }
 
         .amenities-box h3 .highlight {
@@ -425,7 +425,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .amenity-item i {
+        .amenity-item .icon {
             font-size: 2.5rem;
             color: var(--gold);
             margin-bottom: 0.5rem;
@@ -464,9 +464,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-family: Georgia, serif;
         }
 
-        .info-box h3 i {
+        .info-box h3 .icon {
             color: var(--gold);
         }
 
@@ -522,9 +523,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-family: Georgia, serif;
         }
 
-        .contact-box h3 i {
+        .contact-box h3 .icon {
             color: var(--gold);
         }
 
@@ -570,6 +572,7 @@
             color: var(--white);
             font-family: inherit;
             transition: all 0.3s;
+            font-size: 1rem;
         }
 
         .form-input:focus,
@@ -613,6 +616,7 @@
             color: var(--gold);
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-family: Georgia, serif;
         }
 
         .footer-section p,
@@ -655,17 +659,14 @@
             gap: 0.75rem;
             z-index: 9999;
             animation: slideIn 0.3s ease-out;
+            border-left: 4px solid var(--green);
         }
 
         .toast.show {
             display: flex;
         }
 
-        .toast.success {
-            border-left: 4px solid var(--green);
-        }
-
-        .toast i {
+        .toast .icon {
             color: var(--green);
             font-size: 1.5rem;
         }
@@ -726,6 +727,11 @@
             .cards-grid {
                 grid-template-columns: 1fr;
             }
+
+            .toast {
+                right: 1rem;
+                left: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -745,63 +751,61 @@
 </head>
 <body>
     <!-- Header -->
-    <header id=\"header\">
-        <div class=\"container\">
-            <div class=\"header-content\">
-                <a href=\"#\" class=\"logo font-display\">Airways Inn Residency</a>
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Airways Inn Residency</a>
                 
-                <nav class=\"desktop-nav\">
-                    <a href=\"#about\">About</a>
-                    <a href=\"#rooms\">Rooms</a>
-                    <a href=\"#location\">Location</a>
-                    <a href=\"#contact\">Contact</a>
-                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-primary\">Book Now</a>
+                <nav class="desktop-nav">
+                    <a href="#about">About</a>
+                    <a href="#rooms">Rooms</a>
+                    <a href="#location">Location</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-primary">Book Now</a>
                 </nav>
 
-                <button class=\"menu-toggle\" id=\"menuToggle\">
-                    <i class=\"fas fa-bars\"></i>
-                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
 
-            <div class=\"mobile-menu\" id=\"mobileMenu\">
+            <div class="mobile-menu" id="mobileMenu">
                 <nav>
-                    <a href=\"#about\">About</a>
-                    <a href=\"#rooms\">Rooms</a>
-                    <a href=\"#location\">Location</a>
-                    <a href=\"#contact\">Contact</a>
-                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-primary\">Book Now</a>
+                    <a href="#about">About</a>
+                    <a href="#rooms">Rooms</a>
+                    <a href="#location">Location</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-primary">Book Now</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class=\"hero\">
-        <div class=\"hero-bg\">
-            <img src=\"https://images.pexels.com/photos/36688004/pexels-photo-36688004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\" alt=\"Airways Inn Residency\">
-            <div class=\"hero-overlay\"></div>
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/36688004/pexels-photo-36688004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Airways Inn Residency">
+            <div class="hero-overlay"></div>
         </div>
 
-        <div class=\"container\">
-            <div class=\"hero-content\">
-                <div class=\"stars\">
-                    <i class=\"fas fa-star star\"></i>
-                    <i class=\"fas fa-star star\"></i>
-                    <span style=\"margin-left: 0.5rem; color: var(--gold); font-weight: 600;\">2 Star Hotel</span>
+        <div class="container">
+            <div class="hero-content">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span style="margin-left: 0.5rem; color: var(--gold); font-weight: 600;">2 Star Hotel</span>
                 </div>
                 
-                <h1 class=\"font-display\">
-                    Airways Inn <span class=\"highlight\">Residency</span>
+                <h1>
+                    Airways Inn <span class="highlight">Residency</span>
                 </h1>
                 
                 <p>Your Comfortable Stay in the Heart of Andheri East</p>
 
-                <div class=\"hero-buttons\">
-                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\">
+                <div class="hero-buttons">
+                    <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success">
                         Book Now via WhatsApp
                     </a>
-                    <a href=\"tel:+912228591000\" class=\"btn btn-primary\">
-                        <i class=\"fas fa-phone\"></i> Call Us
+                    <a href="tel:+912228591000" class="btn btn-primary">
+                        📞 Call Us
                     </a>
                 </div>
             </div>
@@ -809,39 +813,33 @@
     </section>
 
     <!-- About Section -->
-    <section id=\"about\" class=\"bg-gray\">
-        <div class=\"container\">
-            <div class=\"section-title\">
-                <h2 class=\"font-display\">Welcome to Airways Inn Residency</h2>
-                <p style=\"max-width: 800px; margin: 0 auto;\">
+    <section id="about" class="bg-gray">
+        <div class="container">
+            <div class="section-title">
+                <h2>Welcome to Airways Inn Residency</h2>
+                <p style="max-width: 800px; margin: 0 auto;">
                     Experience budget-friendly comfort in the heart of Andheri East. Strategically located near Marol Naka, 
                     we offer easy access to BKC, SEEPZ, Andheri railway station, and Mumbai airport. Perfect for business 
                     travelers and airport transit guests seeking quality accommodation at affordable rates.
                 </p>
             </div>
 
-            <div class=\"cards-grid\">
-                <div class=\"icon-card\">
-                    <div class=\"icon-circle\">
-                        <i class=\"fas fa-plane\"></i>
-                    </div>
-                    <h3 class=\"font-display\">Airport Nearby</h3>
+            <div class="cards-grid">
+                <div class="icon-card">
+                    <div class="icon-circle">✈️</div>
+                    <h3>Airport Nearby</h3>
                     <p>Just 5 minutes from Mumbai International Airport</p>
                 </div>
 
-                <div class=\"icon-card\">
-                    <div class=\"icon-circle\">
-                        <i class=\"fas fa-building\"></i>
-                    </div>
-                    <h3 class=\"font-display\">Business District Access</h3>
+                <div class="icon-card">
+                    <div class="icon-circle">🏢</div>
+                    <h3>Business District Access</h3>
                     <p>15 minutes to BKC, 5 minutes to SEEPZ</p>
                 </div>
 
-                <div class=\"icon-card\">
-                    <div class=\"icon-circle\">
-                        <i class=\"fas fa-sparkles\"></i>
-                    </div>
-                    <h3 class=\"font-display\">Comfortable Rooms</h3>
+                <div class="icon-card">
+                    <div class="icon-circle">✨</div>
+                    <h3>Comfortable Rooms</h3>
                     <p>Modern amenities for a pleasant stay</p>
                 </div>
             </div>
@@ -849,48 +847,48 @@
     </section>
 
     <!-- Rooms & Amenities Section -->
-    <section id=\"rooms\">
-        <div class=\"container\">
-            <div class=\"section-title\">
-                <h2 class=\"font-display\">Our Rooms</h2>
+    <section id="rooms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Rooms</h2>
                 <p>Choose the perfect room for your stay</p>
             </div>
 
-            <div class=\"cards-grid\">
-                <div class=\"card\">
-                    <div class=\"card-image\">
-                        <img src=\"https://images.unsplash.com/photo-1618773928121-c32242e63f39\" alt=\"Standard Room\">
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39" alt="Standard Room">
                     </div>
-                    <div class=\"card-content\">
-                        <h3 class=\"card-title font-display\">Standard Room</h3>
-                        <p class=\"card-text\">Comfortable accommodation with all essential amenities for a pleasant stay.</p>
-                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Standard%20Room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                    <div class="card-content">
+                        <h3 class="card-title">Standard Room</h3>
+                        <p class="card-text">Comfortable accommodation with all essential amenities for a pleasant stay.</p>
+                        <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Standard%20Room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success" style="width: 100%;">
                             Check Availability
                         </a>
                     </div>
                 </div>
 
-                <div class=\"card\">
-                    <div class=\"card-image\">
-                        <img src=\"https://images.unsplash.com/photo-1611892440504-42a792e24d32\" alt=\"Deluxe Room\">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32" alt="Deluxe Room">
                     </div>
-                    <div class=\"card-content\">
-                        <h3 class=\"card-title font-display\">Deluxe Room</h3>
-                        <p class=\"card-text\">Enhanced comfort with premium furnishings and additional space.</p>
-                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Deluxe%20Room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                    <div class="card-content">
+                        <h3 class="card-title">Deluxe Room</h3>
+                        <p class="card-text">Enhanced comfort with premium furnishings and additional space.</p>
+                        <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Deluxe%20Room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success" style="width: 100%;">
                             Check Availability
                         </a>
                     </div>
                 </div>
 
-                <div class=\"card\">
-                    <div class=\"card-image\">
-                        <img src=\"https://images.unsplash.com/photo-1631049552057-403cdb8f0658\" alt=\"Suite\">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658" alt="Suite">
                     </div>
-                    <div class=\"card-content\">
-                        <h3 class=\"card-title font-display\">Suite</h3>
-                        <p class=\"card-text\">Spacious suite with separate seating area for ultimate comfort.</p>
-                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Suite%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%;\">
+                    <div class="card-content">
+                        <h3 class="card-title">Suite</h3>
+                        <p class="card-text">Spacious suite with separate seating area for ultimate comfort.</p>
+                        <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20Suite%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success" style="width: 100%;">
                             Check Availability
                         </a>
                     </div>
@@ -898,39 +896,39 @@
             </div>
 
             <!-- Amenities -->
-            <div class=\"amenities-box\">
-                <h3 class=\"font-display\">Our <span class=\"highlight\">Amenities</span></h3>
-                <div class=\"amenities-grid\">
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-wifi\"></i>
+            <div class="amenities-box">
+                <h3>Our <span class="highlight">Amenities</span></h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <div class="icon">📶</div>
                         <span>Free WiFi</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-wind\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">❄️</div>
                         <span>AC Rooms</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-clock\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">🕐</div>
                         <span>24/7 Reception</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-droplet\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">💧</div>
                         <span>Hot Water</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-tv\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">📺</div>
                         <span>TV</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-sparkles\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">🧹</div>
                         <span>Housekeeping</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-battery-full\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">🔋</div>
                         <span>Power Backup</span>
                     </div>
-                    <div class=\"amenity-item\">
-                        <i class=\"fas fa-shield\"></i>
+                    <div class="amenity-item">
+                        <div class="icon">🛡️</div>
                         <span>CCTV Security</span>
                     </div>
                 </div>
@@ -939,18 +937,18 @@
     </section>
 
     <!-- Location Section -->
-    <section id=\"location\" class=\"bg-gray\">
-        <div class=\"container\">
-            <div class=\"section-title\">
-                <h2 class=\"font-display\">Our Location</h2>
+    <section id="location" class="bg-gray">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Location</h2>
                 <p>Conveniently located in the heart of Andheri East</p>
             </div>
 
-            <div class=\"location-grid\">
-                <div class=\"location-info\">
-                    <div class=\"info-box\">
-                        <h3 class=\"font-display\">
-                            <i class=\"fas fa-map-marker-alt\"></i>
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="info-box">
+                        <h3>
+                            <span class="icon">📍</span>
                             Address
                         </h3>
                         <p>
@@ -960,34 +958,35 @@
                         </p>
                     </div>
 
-                    <div class=\"info-box\">
-                        <h3 class=\"font-display\">Nearby Landmarks</h3>
-                        <div class=\"landmark-item\">
+                    <div class="info-box">
+                        <h3>Nearby Landmarks</h3>
+                        <div class="landmark-item">
                             <span>Mumbai Airport</span>
-                            <span class=\"landmark-time\">5 min</span>
+                            <span class="landmark-time">5 min</span>
                         </div>
-                        <div class=\"landmark-item\">
+                        <div class="landmark-item">
                             <span>BKC Business District</span>
-                            <span class=\"landmark-time\">15 min</span>
+                            <span class="landmark-time">15 min</span>
                         </div>
-                        <div class=\"landmark-item\">
+                        <div class="landmark-item">
                             <span>SEEPZ</span>
-                            <span class=\"landmark-time\">5 min</span>
+                            <span class="landmark-time">5 min</span>
                         </div>
-                        <div class=\"landmark-item\">
+                        <div class="landmark-item">
                             <span>Andheri Station</span>
-                            <span class=\"landmark-time\">10 min</span>
+                            <span class="landmark-time">10 min</span>
                         </div>
                     </div>
                 </div>
 
-                <div class=\"map-container\">
+                <!-- ✅ FIXED: Real Google Maps embed for Hotel Airways Inn Residency -->
+                <div class="map-container">
                     <iframe
-                        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2044084965614!2d72.86866931490194!3d19.11076558705733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c83c0e5bb89b%3A0x5c5c5c5c5c5c5c5c!2sMarol%20Naka%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin\"
-                        allowfullscreen=\"\"
-                        loading=\"lazy\"
-                        referrerpolicy=\"no-referrer-when-downgrade\"
-                        title=\"Airways Inn Residency Location\">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0457285538478!2d72.87803247551165!3d19.105649732105025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c86b617db2c3%3A0xcde67b2293015586!2sHotel%20Airways%20Inn%20Residency!5e0!3m2!1sen!2sin!4v1775163328514!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Airways Inn Residency Location">
                     </iframe>
                 </div>
             </div>
@@ -995,65 +994,65 @@
     </section>
 
     <!-- Contact & Booking Section -->
-    <section id=\"contact\" class=\"bg-navy\">
-        <div class=\"container\">
-            <div class=\"section-title\">
-                <h2 class=\"font-display\">Book Your <span style=\"color: var(--gold);\">Stay</span></h2>
-                <p style=\"color: var(--gray-400);\">We're here 24/7 to assist you</p>
+    <section id="contact" class="bg-navy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your <span style="color: var(--gold);">Stay</span></h2>
+                <p style="color: var(--gray-400);">We're here 24/7 to assist you</p>
             </div>
 
-            <div class=\"contact-grid\">
+            <div class="contact-grid">
                 <div>
-                    <div class=\"contact-box\">
-                        <h3 class=\"font-display\">
-                            <i class=\"fas fa-phone\"></i>
+                    <div class="contact-box">
+                        <h3>
+                            <span class="icon">📞</span>
                             Contact Information
                         </h3>
-                        <div class=\"contact-item\">
+                        <div class="contact-item">
                             <p>Phone</p>
-                            <a href=\"tel:+912228591000\">+91-22-28591000</a>
+                            <a href="tel:+912228591000">+91-22-28591000</a>
                         </div>
-                        <div class=\"contact-item\">
+                        <div class="contact-item">
                             <p>Business Hours</p>
-                            <p style=\"font-size: 1.125rem; color: var(--white);\">24/7 Front Desk</p>
+                            <p style="font-size: 1.125rem; color: var(--white);">24/7 Front Desk</p>
                         </div>
                     </div>
 
-                    <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\" style=\"width: 100%; margin-top: 1.5rem; padding: 1.5rem; font-size: 1.125rem;\">
-                        Book via WhatsApp
+                    <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success" style="width: 100%; margin-top: 1.5rem; padding: 1.5rem; font-size: 1.125rem;">
+                        📱 Book via WhatsApp
                     </a>
                 </div>
 
-                <div class=\"contact-box\">
-                    <h3 class=\"font-display\">Inquiry Form</h3>
-                    <form id=\"inquiryForm\">
-                        <div class=\"form-group\">
-                            <label class=\"form-label\">Name</label>
-                            <input type=\"text\" name=\"name\" class=\"form-input\" placeholder=\"Your name\" required>
+                <div class="contact-box">
+                    <h3>Inquiry Form</h3>
+                    <form id="inquiryForm" action="https://formspree.io/f/mwvwnylj" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" name="name" class="form-input" placeholder="Your name" required>
                         </div>
 
-                        <div class=\"form-group\">
-                            <label class=\"form-label\">Phone</label>
-                            <input type=\"tel\" name=\"phone\" class=\"form-input\" placeholder=\"Your phone number\" required>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" name="phone" class="form-input" placeholder="Your phone number" required>
                         </div>
 
-                        <div class=\"form-row\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\">Check-in</label>
-                                <input type=\"date\" name=\"checkin\" class=\"form-input\" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Check-in</label>
+                                <input type="date" name="checkin" class="form-input" required>
                             </div>
-                            <div class=\"form-group\">
-                                <label class=\"form-label\">Check-out</label>
-                                <input type=\"date\" name=\"checkout\" class=\"form-input\" required>
+                            <div class="form-group">
+                                <label class="form-label">Check-out</label>
+                                <input type="date" name="checkout" class="form-input" required>
                             </div>
                         </div>
 
-                        <div class=\"form-group\">
-                            <label class=\"form-label\">Message</label>
-                            <textarea name=\"message\" class=\"form-textarea\" placeholder=\"Any special requests?\"></textarea>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea name="message" class="form-textarea" placeholder="Any special requests?"></textarea>
                         </div>
 
-                        <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%; padding: 1.5rem;\">
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; padding: 1.5rem;">
                             Submit Inquiry
                         </button>
                     </form>
@@ -1063,11 +1062,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class=\"bg-navy-darker\">
-        <div class=\"container\">
-            <div class=\"footer-grid\">
-                <div class=\"footer-section\">
-                    <h3 class=\"font-display\">Airways Inn Residency</h3>
+    <footer class="bg-navy-darker">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Airways Inn Residency</h3>
                     <p>
                         Marol Naka, Andheri-Kurla Road<br>
                         Andheri East, Mumbai<br>
@@ -1075,44 +1074,44 @@
                     </p>
                 </div>
 
-                <div class=\"footer-section\">
-                    <h3 class=\"font-display\" style=\"font-size: 1.125rem;\">Quick Links</h3>
-                    <a href=\"#about\">About Us</a>
-                    <a href=\"#rooms\">Rooms & Amenities</a>
-                    <a href=\"#location\">Location</a>
-                    <a href=\"#contact\">Contact</a>
+                <div class="footer-section">
+                    <h3 style="font-size: 1.125rem;">Quick Links</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#rooms">Rooms & Amenities</a>
+                    <a href="#location">Location</a>
+                    <a href="#contact">Contact</a>
                 </div>
 
-                <div class=\"footer-section\">
-                    <h3 class=\"font-display\" style=\"font-size: 1.125rem;\">Connect With Us</h3>
-                    <div class=\"footer-buttons\">
-                        <a href=\"https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency\" target=\"_blank\" class=\"btn btn-success\">
-                            <i class=\"fab fa-whatsapp\"></i> WhatsApp
+                <div class="footer-section">
+                    <h3 style="font-size: 1.125rem;">Connect With Us</h3>
+                    <div class="footer-buttons">
+                        <a href="https://wa.me/912228591000?text=Hi%2C%20I'd%20like%20to%20book%20a%20room%20at%20Airways%20Inn%20Residency" target="_blank" class="btn btn-success">
+                            📱 WhatsApp
                         </a>
-                        <a href=\"tel:+912228591000\" class=\"btn btn-primary\">
-                            <i class=\"fas fa-phone\"></i> Call Now
+                        <a href="tel:+912228591000" class="btn btn-primary">
+                            📞 Call Now
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class=\"footer-bottom\">
-                <p>&copy; 2025 Airways Inn Residency. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Airways Inn Residency. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Toast Notification -->
-    <div class=\"toast success\" id=\"toast\">
-        <i class=\"fas fa-check-circle\"></i>
-        <span id=\"toastMessage\">Thank you! We'll call you back shortly.</span>
+    <div class="toast" id="toast">
+        <span class="icon">✓</span>
+        <span id="toastMessage">Thank you! We'll call you back shortly.</span>
     </div>
 
     <!-- JavaScript -->
     <script>
         // Header scroll effect
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
@@ -1124,31 +1123,26 @@
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
             if (mobileMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+                menuToggle.textContent = '✕';
             } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                menuToggle.textContent = '☰';
             }
         });
 
         // Close mobile menu when clicking on a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
+        mobileLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                menuToggle.textContent = '☰';
             });
         });
 
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && href.length > 1) {
@@ -1164,38 +1158,59 @@
             });
         });
 
-        // Form submission
+        // Form submission via Formspree
         const inquiryForm = document.getElementById('inquiryForm');
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
+        const submitBtn = document.getElementById('submitBtn');
 
-        inquiryForm.addEventListener('submit', (e) => {
+        inquiryForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Show toast notification
-            toastMessage.textContent = \"Thank you! We'll call you back shortly.\";
-            toast.classList.add('show');
-            
-            // Reset form
-            inquiryForm.reset();
-            
-            // Hide toast after 4 seconds
-            setTimeout(() => {
+
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(inquiryForm);
+
+            try {
+                const response = await fetch('https://formspree.io/f/mwvwnylj', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    toastMessage.textContent = "Thank you! We'll call you back shortly.";
+                    toast.classList.add('show');
+                    inquiryForm.reset();
+                } else {
+                    toastMessage.textContent = "Something went wrong. Please call us directly.";
+                    toast.classList.add('show');
+                }
+            } catch (error) {
+                toastMessage.textContent = "Network error. Please call us directly.";
+                toast.classList.add('show');
+            }
+
+            submitBtn.textContent = 'Submit Inquiry';
+            submitBtn.disabled = false;
+
+            setTimeout(function() {
                 toast.classList.remove('show');
             }, 4000);
         });
 
         // Set minimum date for check-in and check-out
         const today = new Date().toISOString().split('T')[0];
-        const checkinInput = document.querySelector('input[name=\"checkin\"]');
-        const checkoutInput = document.querySelector('input[name=\"checkout\"]');
+        const checkinInput = document.querySelector('input[name="checkin"]');
+        const checkoutInput = document.querySelector('input[name="checkout"]');
         
         if (checkinInput) {
             checkinInput.setAttribute('min', today);
-            checkinInput.addEventListener('change', (e) => {
+            checkinInput.addEventListener('change', function(e) {
                 checkoutInput.setAttribute('min', e.target.value);
             });
         }
     </script>
 </body>
-</html>"
+</html>
